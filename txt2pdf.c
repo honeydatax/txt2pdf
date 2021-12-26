@@ -20,12 +20,12 @@ int main(int arg,char  *argv[]){
 			while(feof(f)!=1){
 				strcpy(envi," ");
 				fgets(envi,1070,f);
-				fprintf(ff,"\n20 %d moveto\n( %s ) show\n",lines,envi);
-				lines=lines-13;
+				fprintf(ff,"\n30 %d moveto\n( %s ) show\n",lines,envi);
+				lines=lines-15;
 				if (lines < 28) goto exits;
 			}
 			exits:
-			fprintf(ff,"\n%%EOF\n");
+			fprintf(ff,"\nshowpage\n%%%%EOF\n");
 			fclose(ff);
 			fclose(f);
 			sprintf(envi,"ps2pdf %s.ps %s",argv[2],argv[2]);
